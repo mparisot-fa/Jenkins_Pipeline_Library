@@ -1,5 +1,6 @@
 def call() {
     withEnv(['VAR1=value1']) {
-        sh(libraryResource('test.sh'))
+        script = libraryResource('com/test/scripts/test.sh')
+        sh(script)
     }
 }
