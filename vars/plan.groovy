@@ -1,5 +1,6 @@
 // https://www.lambdatest.com/blog/use-jenkins-shared-libraries-in-a-jenkins-pipeline/
 def call() {
+    vars.set_parameters()
     pipeline {
         agent any
         stages {
