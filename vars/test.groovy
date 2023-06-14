@@ -8,7 +8,7 @@ def call() {
                 steps {
                     script {
                         withEnv(['VAR1=value1']) {
-                            script = libraryResource('com/test/scripts/plan.sh')
+                            script = libraryResource('com/test/scripts/test.sh')
                             sh(script)
                         }
                     }
