@@ -1,6 +1,6 @@
 // https://www.lambdatest.com/blog/use-jenkins-shared-libraries-in-a-jenkins-pipeline/
-def call() {
-    set_parameters()
+def call(Map config) {
+    set_parameters(config)
     pipeline {
         agent any
         stages {
@@ -14,6 +14,7 @@ def call() {
                     }
                 }
             }
+
         }
     }
 }

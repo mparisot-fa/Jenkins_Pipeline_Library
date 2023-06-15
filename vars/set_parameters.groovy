@@ -1,4 +1,4 @@
-def call() {
+def call(Map config) {
 
     properties([
             parameters([
@@ -18,7 +18,7 @@ def call() {
                             name: 'AutoApproved'
                     ),
                     choice(
-                            choices: ['sandbox', 'dev', 'qa', 'stg', 'prod'],
+                            choices: config["environments"],
                             name: 'Environment'
                     )
             ])
