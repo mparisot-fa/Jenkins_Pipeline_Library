@@ -1,4 +1,31 @@
+import hudson.model.User
 def call(Map config) {
+    currentUser = User.current()
+
+    roles = ["dev", "devops", "liveops", "nobody"]
+    println(roles)
+    role = roles[new Random().nextInt(roles.size())]
+    println("current role " + role)
+
+    environments =  ['sandbox', 'dev']
+    switch(role){
+        case "dev":
+            break;
+        case "devops":
+            environments.add("qa")
+            break;
+        case "liveops":
+            environments.add("stg")
+            environments.add("qa")
+            break;
+        default:
+            println("Invalid role [" + role + "], aborting.")
+            throw Exception("too bad")
+            break
+    }
+
+
+    config["environments"]
 
     properties([
             parameters([
@@ -8,7 +35,7 @@ def call(Map config) {
                             name: 'Branch'
                     ),
                     choice(
-                            choices: ['s3', 'glue', 'secrets'],
+                            choices: config["components"].keySet().sort(),
                             name: 'Component',
                             description: '''<b>Select the component for which you wish to build infrastructure for.</b><br><br>'''
                     ),
