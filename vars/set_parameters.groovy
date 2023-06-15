@@ -45,7 +45,7 @@ def call(Map config) {
                             name: 'AutoApproved'
                     ),
                     choice(
-                            choices: config["environments"],
+                            choices: environments,
                             name: 'Environment'
                     )
             ])
