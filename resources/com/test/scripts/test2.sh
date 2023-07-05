@@ -16,6 +16,6 @@ declare -f
 echo -- -----
 
 echo "Sourcing ..."
-source functions
+source ${PWD}@libs/*/resources/com/test/scripts/functions
 echo "Using myecho:"
 myecho "Youpi"
