@@ -9,7 +9,7 @@ def call(Map config) {
                     script {
                         withEnv(['VAR1=value1']) {
                             script = libraryResource("com/test/scripts/test2.sh")
-                            sh(script + " Branch=${Branch} Component=${Component} Environment=${Environment}")
+                            sh(script + " Branch=${Branch} Component=${Component} Environment=${Environment} Balle=boule")
                         }
                     }
                 }
