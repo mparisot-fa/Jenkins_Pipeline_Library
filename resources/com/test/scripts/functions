@@ -1,0 +1,3 @@
+myecho(){
+    echo "This my echo: $@"
+}
