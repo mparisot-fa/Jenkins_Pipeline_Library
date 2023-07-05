@@ -1,6 +1,6 @@
 import hudson.model.User
 def call(Map config) {
-    currentUser = User.current()
+   // currentUser = User.current()
 
     roles = ["dev", "devops", "liveops", "nobody"]
     println(roles)
